@@ -40,6 +40,17 @@ namespace SyncService
             return SqlHelper.Default.ExecuteList<MissingData>(cmdText, parameters);
         }
 
+        public void InsertMissData(string code, DateTime time, string exception = null, string mCode = null, string pCode = null)
+        {
+            MissingData data = new MissingData();
+            data.Code = code;
+            data.CreateTime = DateTime.Now;
+            data.Time = DateTime.Today.AddHours(DateTime.Now.Hour);
+            data.Exception = exception;
+            data.MCode = mCode;
+            data.PCode = pCode;
+        }
+
         public static void Update(IEnumerable<MissingData> collection)
         {
 

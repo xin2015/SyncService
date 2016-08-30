@@ -13,17 +13,13 @@ namespace SyncService.Service
     {
         private static ILog logger;
         public static string CronExpression { get; set; }
-        public static string RecoverCronExpression { get; set; }
-        public static string IsRecoverKey { get; set; }
         public static string LiveTableName { get; set; }
         public static string HistoryTableName { get; set; }
-
+        public static string Code { get; set; }
         static SyncAQMSHDataJob()
         {
             logger = LogManager.GetLogger<SyncAQMSHDataJob>();
             CronExpression = Configuration.SyncAQMSHDataJobCronExpression;
-            RecoverCronExpression = Configuration.SyncAQMSHDataJobRecoverCronExpression;
-            IsRecoverKey = "IsRecoverKey";
             LiveTableName = "AQIDataPublishLive";
             HistoryTableName = "AQIDataPublishHistory";
         }
@@ -32,27 +28,36 @@ namespace SyncService.Service
         {
             try
             {
-                JobDataMap jobDataMap = context.JobDetail.JobDataMap;
-                bool isRecover = jobDataMap.GetBooleanValue(IsRecoverKey);
-                if (isRecover)
-                {
-
-                }
+                object state = SqlHelper.Default.ExecuteScalar(string.Format("select max(TimePoint) from {0}", LiveTableName));
+                DateTime lastTime = Convert.IsDBNull(state) ? DateTime.MinValue : Convert.ToDateTime(state);
                 List<AQIDataPublishLive> list = new List<AQIDataPublishLive>();
                 using (SyncNationalAQIPublishDataServiceClient client = new SyncNationalAQIPublishDataServiceClient())
                 {
                     list = client.GetAQIDataPublishLive().ToList();
                 }
-                SqlHelper.Default.Insert(list.GetDataTable<AQIDataPublishLive>(TableName));
-            }
-            catch (System.Data.SqlClient.SqlException e)
-            {
-                if (!e.Message.Contains("插入重复键")) logger.Error("SyncAQMSHData failed.", e);
+                if (list.Any() && list.First().TimePoint > lastTime)
+                {
+                    SqlHelper.Default.ExecuteNonQuery(string.Format("delete {0}", LiveTableName));
+                    SqlHelper.Default.Insert(list.GetDataTable<AQIDataPublishLive>(LiveTableName));
+                    SqlHelper.Default.Insert(list.GetDataTable<AQIDataPublishLive>(HistoryTableName));
+                }
+                else
+                {
+                    InsertMissData();
+                }
             }
             catch (Exception e)
             {
+                InsertMissData(e.Message);
                 logger.Error("SyncAQMSHData failed.", e);
             }
+            try
+            {
+                List<MissingData> missingDataList = MissingDataHelper.GetList(Code);
+
+            }
         }
+
+        
     }
 }
