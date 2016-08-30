@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2ee5477f-96eb-4d9e-95e1-91fc1c416275" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://219.131.199.90:8340/SyncNationalAQIPublishDataService/SyncNationalAQIPublishDataService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SyncNationalAQIPublishDataService.xsd" MetadataType="Schema" ID="5d4dd199-4614-4e15-851c-87765e46afae" SourceId="1" SourceUrl="http://219.131.199.90:8340/SyncNationalAQIPublishDataService/SyncNationalAQIPublishDataService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SyncNationalAQIPublishDataService.disco" MetadataType="Disco" ID="31dbc949-a157-44df-b974-84207b3a3a9c" SourceId="1" SourceUrl="http://219.131.199.90:8340/SyncNationalAQIPublishDataService/SyncNationalAQIPublishDataService.svc?disco" />
+    <MetadataFile FileName="SyncNationalAQIPublishDataService.wsdl" MetadataType="Wsdl" ID="d2117862-faab-4ceb-a7d0-92c5772b972d" SourceId="1" SourceUrl="http://219.131.199.90:8340/SyncNationalAQIPublishDataService/SyncNationalAQIPublishDataService.svc?wsdl" />
+    <MetadataFile FileName="SyncNationalAQIPublishDataService1.xsd" MetadataType="Schema" ID="b7fe13bc-649e-4629-b74b-f2fa4a72e27b" SourceId="1" SourceUrl="http://219.131.199.90:8340/SyncNationalAQIPublishDataService/SyncNationalAQIPublishDataService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SyncNationalAQIPublishDataService2.xsd" MetadataType="Schema" ID="8a799dfa-cfcb-40d3-add5-6c7a7aa52ed4" SourceId="1" SourceUrl="http://219.131.199.90:8340/SyncNationalAQIPublishDataService/SyncNationalAQIPublishDataService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

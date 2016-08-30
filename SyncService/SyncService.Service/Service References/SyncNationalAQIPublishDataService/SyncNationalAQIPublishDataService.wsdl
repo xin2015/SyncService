@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SyncNationalAQIPublishDataService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://219.131.199.90:8340/SyncNationalAQIPublishDataService/SyncNationalAQIPublishDataService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://219.131.199.90:8340/SyncNationalAQIPublishDataService/SyncNationalAQIPublishDataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://219.131.199.90:8340/SyncNationalAQIPublishDataService/SyncNationalAQIPublishDataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SyncNationalAQIPublishDataService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISyncNationalAQIPublishDataService_GetAQIDataPublishLive_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAQIDataPublishLive" />
+  </wsdl:message>
+  <wsdl:message name="ISyncNationalAQIPublishDataService_GetAQIDataPublishLive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAQIDataPublishLiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncNationalAQIPublishDataService_GetAQIDataPublishHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAQIDataPublishHistory" />
+  </wsdl:message>
+  <wsdl:message name="ISyncNationalAQIPublishDataService_GetAQIDataPublishHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAQIDataPublishHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncNationalAQIPublishDataService_GetCityAQIPublishLive_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityAQIPublishLive" />
+  </wsdl:message>
+  <wsdl:message name="ISyncNationalAQIPublishDataService_GetCityAQIPublishLive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityAQIPublishLiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncNationalAQIPublishDataService_GetCityAQIPublishHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityAQIPublishHistory" />
+  </wsdl:message>
+  <wsdl:message name="ISyncNationalAQIPublishDataService_GetCityAQIPublishHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityAQIPublishHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncNationalAQIPublishDataService_GetCityDayAQIPublishLive_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityDayAQIPublishLive" />
+  </wsdl:message>
+  <wsdl:message name="ISyncNationalAQIPublishDataService_GetCityDayAQIPublishLive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityDayAQIPublishLiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISyncNationalAQIPublishDataService_GetCityDayAQIPublishHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityDayAQIPublishHistory" />
+  </wsdl:message>
+  <wsdl:message name="ISyncNationalAQIPublishDataService_GetCityDayAQIPublishHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityDayAQIPublishHistoryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISyncNationalAQIPublishDataService">
+    <wsdl:operation name="GetAQIDataPublishLive">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncNationalAQIPublishDataService/GetAQIDataPublishLive" message="tns:ISyncNationalAQIPublishDataService_GetAQIDataPublishLive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncNationalAQIPublishDataService/GetAQIDataPublishLiveResponse" message="tns:ISyncNationalAQIPublishDataService_GetAQIDataPublishLive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAQIDataPublishHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncNationalAQIPublishDataService/GetAQIDataPublishHistory" message="tns:ISyncNationalAQIPublishDataService_GetAQIDataPublishHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncNationalAQIPublishDataService/GetAQIDataPublishHistoryResponse" message="tns:ISyncNationalAQIPublishDataService_GetAQIDataPublishHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCityAQIPublishLive">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncNationalAQIPublishDataService/GetCityAQIPublishLive" message="tns:ISyncNationalAQIPublishDataService_GetCityAQIPublishLive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncNationalAQIPublishDataService/GetCityAQIPublishLiveResponse" message="tns:ISyncNationalAQIPublishDataService_GetCityAQIPublishLive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCityAQIPublishHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncNationalAQIPublishDataService/GetCityAQIPublishHistory" message="tns:ISyncNationalAQIPublishDataService_GetCityAQIPublishHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncNationalAQIPublishDataService/GetCityAQIPublishHistoryResponse" message="tns:ISyncNationalAQIPublishDataService_GetCityAQIPublishHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCityDayAQIPublishLive">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncNationalAQIPublishDataService/GetCityDayAQIPublishLive" message="tns:ISyncNationalAQIPublishDataService_GetCityDayAQIPublishLive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncNationalAQIPublishDataService/GetCityDayAQIPublishLiveResponse" message="tns:ISyncNationalAQIPublishDataService_GetCityDayAQIPublishLive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCityDayAQIPublishHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISyncNationalAQIPublishDataService/GetCityDayAQIPublishHistory" message="tns:ISyncNationalAQIPublishDataService_GetCityDayAQIPublishHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISyncNationalAQIPublishDataService/GetCityDayAQIPublishHistoryResponse" message="tns:ISyncNationalAQIPublishDataService_GetCityDayAQIPublishHistory_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISyncNationalAQIPublishDataService" type="tns:ISyncNationalAQIPublishDataService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAQIDataPublishLive">
+      <soap:operation soapAction="http://tempuri.org/ISyncNationalAQIPublishDataService/GetAQIDataPublishLive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAQIDataPublishHistory">
+      <soap:operation soapAction="http://tempuri.org/ISyncNationalAQIPublishDataService/GetAQIDataPublishHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityAQIPublishLive">
+      <soap:operation soapAction="http://tempuri.org/ISyncNationalAQIPublishDataService/GetCityAQIPublishLive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityAQIPublishHistory">
+      <soap:operation soapAction="http://tempuri.org/ISyncNationalAQIPublishDataService/GetCityAQIPublishHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityDayAQIPublishLive">
+      <soap:operation soapAction="http://tempuri.org/ISyncNationalAQIPublishDataService/GetCityDayAQIPublishLive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityDayAQIPublishHistory">
+      <soap:operation soapAction="http://tempuri.org/ISyncNationalAQIPublishDataService/GetCityDayAQIPublishHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SyncNationalAQIPublishDataService">
+    <wsdl:port name="BasicHttpBinding_ISyncNationalAQIPublishDataService" binding="tns:BasicHttpBinding_ISyncNationalAQIPublishDataService">
+      <soap:address location="http://219.131.199.90:8340/SyncNationalAQIPublishDataService/SyncNationalAQIPublishDataService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
