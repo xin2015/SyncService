@@ -31,7 +31,7 @@ namespace SyncService
 
         public static List<MissingData> GetList(string code)
         {
-            string cmdText = string.Format("select * from {0} where Code = @Code and Status = 1 and MissTimes <= @MaxMissTimes", TableName);
+            string cmdText = string.Format("select * from {0} where Code = @Code and Status = 0 and MissTimes <= @MaxMissTimes", TableName);
             SqlParameter[] parameters = new SqlParameter[]
             {
                 new SqlParameter("@Code", code),

@@ -43,18 +43,13 @@ namespace SyncService.Service
                 }
                 else
                 {
-                    InsertMissData();
+
                 }
             }
             catch (Exception e)
             {
-                InsertMissData(e.Message);
-                logger.Error("SyncAQMSHData failed.", e);
-            }
-            try
-            {
-                List<MissingData> missingDataList = MissingDataHelper.GetList(Code);
 
+                logger.Error("SyncAQMSHData failed.", e);
             }
         }
 
